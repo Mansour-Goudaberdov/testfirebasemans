@@ -3,6 +3,8 @@ import express from 'express'
 import cookieParser from 'cookie-parser'
 import bodyParser from 'body-parser'
 import logger from 'morgan'
+import {getAuth} from 'firebase/auth'
+import firebaseApp from './firebase.js'
 
 // TODO: import Firebase dependencies
 
@@ -11,6 +13,7 @@ import logger from 'morgan'
 import indexRouter from './routes/index.js'
 
 const app = express()
+const auth = getAuth(firebaseApp)
 
 // TODO: create Firebase module
 
